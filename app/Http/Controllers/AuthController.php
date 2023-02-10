@@ -55,26 +55,30 @@ class AuthController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'name' =>'required',
-            'lastname' =>'required',
-            'phone' =>'required',
+            'nom' =>'required',
+            'prenom' =>'required',
+            'tel' =>'required',
             'email' => 'required|email',
             'password' => 'required'
         ]);
 
-        $user = User::create([
+        /*User::create([
             'name' => $request['nom'],
             'lastname' => $request['prenom'],
             'phone' => $request['tel'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
-        ]);
+        ]);*/
+
+        $user = User::findByEmail($request['email']);
+
+        dump($user[0]);
 
         Account::create([
-            'account_number' => rand(1000, 100000),
+            'account_number' => rand(1000, 10000),
             'account_amount' => 0,
             'account_bank' => 'MyBank',
-            'account_user' => $user,
+            'user_id' => $user[0],
         ]);
 
         return redirect('/');

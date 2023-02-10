@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('account_number');
             $table->integer('account_amount');
             $table->string('account_bank');
-            // Relation avec un User
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });

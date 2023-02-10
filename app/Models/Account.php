@@ -10,8 +10,10 @@ class Account extends Model
 {
     use HasFactory;
 
-    public function comments(): HasMany
-    {
-        return $this->hasMany(Comment::class);
-    }
+    protected $fillable = [
+        'account_number',
+        'account_amount',
+        'account_bank',
+        'user_id',
+    ];
 }
