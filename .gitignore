@@ -1,4 +1,4 @@
-
+.idea
 .idea/Bank.iml
 .idea/misc.xml
 .idea/modules.xml
@@ -6,9 +6,5 @@
 .idea/phpunit.xml
 .idea/symfony2.xml
 .idea/vcs.xml
-node_modules/.package-lock.json
-package-lock.json
-node_modules/.package-lock.json
-package-lock.json
 node_modules/.package-lock.json
 package-lock.json
