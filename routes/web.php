@@ -51,7 +51,7 @@ Route::get('/services', [ServiceController::class, 'index'])->middleware('auth')
 
 /* GESTION DE L'AUTHENTIFICATION */
 
-// Route de la page de connexion
+// Route de la page d'enregistrement
 Route::get('/enregistrer', [AuthController::class, 'register']);
 
 // Route pour s'enregistrer
